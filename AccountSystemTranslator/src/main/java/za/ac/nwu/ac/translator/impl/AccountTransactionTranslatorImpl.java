@@ -2,13 +2,14 @@ package za.ac.nwu.ac.translator.impl;
 
 import org.springframework.stereotype.Component;
 import za.ac.nwu.ac.domain.persistence.AccountTransaction;
+import za.ac.nwu.ac.translator.AccountTransactionTranslator;
 import za.ac.nwu.za.repo.persistence.AccountTransactionRepository;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Component
-public class AccountTransactionTranslatorImpl {
+public class AccountTransactionTranslatorImpl implements AccountTransactionTranslator {
 
     private AccountTransactionRepository repo;
 

@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.Set;
 
 @Entity
-@Table(name = "ACCOUNT_TYPE", schema = "MY_SCHEMA")
+@Table(name = "ACCOUNT_TYPE", schema = "HR")
 public class AccountType implements Serializable {
 
     private static final long serialVersionUID = -2109552313657529496L;
@@ -35,7 +35,7 @@ public class AccountType implements Serializable {
     }
 
     @Id
-    @SequenceGenerator(name = "ACCOUNT_SEQ", sequenceName = "MY_SCHEMA.ACCOUNT_SEQ", allocationSize = 1)
+    @SequenceGenerator(name = "ACCOUNT_SEQ", sequenceName = "HR.ACCOUNT_SEQ", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "ACCOUNT_SEQ")
     @Column(name = "ACCOUNT_TYPE_ID")
     public Long getAccountTypeId() {
@@ -57,7 +57,7 @@ public class AccountType implements Serializable {
         return creationDate;
     }
 
-    @OneToMany(targetEntity = AccountTransaction.class, fetch = FetchType.LAZY, mappedBy = "accountType")
+    @OneToMany(targetEntity = AccountTransaction.class, fetch = FetchType.LAZY, mappedBy = "accountType", orphanRemoval = true, cascade = CascadeType.PERSIST)
     public Set<AccountTransaction> getAccountTransactions(){
         return accountTransactions;
     }

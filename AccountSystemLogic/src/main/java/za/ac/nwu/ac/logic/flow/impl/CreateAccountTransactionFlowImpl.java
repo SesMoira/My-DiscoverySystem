@@ -7,11 +7,12 @@ import za.ac.nwu.ac.domain.persistence.AccountType;
 import za.ac.nwu.ac.logic.flow.FetchAccountTypeFlow;
 import za.ac.nwu.ac.translator.AccountTransactionDetailsTranslator;
 import za.ac.nwu.ac.translator.AccountTransactionTranslator;
+import za.ac.nwu.ac.logic.flow.CreateAccountTransactionFlow;
 
 import javax.transaction.Transactional;
 
 @Transactional
-public class CreateAccountTransactionFlowImpl implements CreateAccountTransationFlow{
+public class CreateAccountTransactionFlowImpl implements CreateAccountTransactionFlow{
 
     private final AccountTransactionTranslator accountTransactionTranslator;
     private final AccountTransactionDetailsTranslator accountTransactionDetailsTranslator;
@@ -38,7 +39,7 @@ public class CreateAccountTransactionFlowImpl implements CreateAccountTransation
         if(null != accountTransactionDto.getDetails()){
             AccountTransactionDetails accountTransactionDetails = accountTransactionDto.getDetails()
                     .buildAccountTransactionDetails(createdAccountTransaction);
-            AccountTransactionDetailsTranslator.save(accountTransactionDetails);
+            accountTransactionDetailsTranslator.save(accountTransactionDetails);
         }
         return new AccountTransactionDto(createdAccountTransaction);
     }

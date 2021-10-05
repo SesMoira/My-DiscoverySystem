@@ -10,4 +10,6 @@ public interface AccountTransactionTranslator {
     List<AccountTransaction> getAllAccountTransactions();
 
     AccountTransaction getAllAccountTransactionByPk(Long transactionId);
+
+
 }

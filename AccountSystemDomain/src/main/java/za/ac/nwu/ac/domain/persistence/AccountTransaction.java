@@ -1,12 +1,19 @@
 package za.ac.nwu.ac.domain.persistence;
 
+import lombok.*;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Objects;
-
+@Getter
+@Setter
+@EqualsAndHashCode
+@ToString
+@AllArgsConstructor
+@NonNull
 @Entity
-@Table(name = "ACCOUNT_TX", schema = "MY_SCHEMA")
+@Table(name = "ACCOUNT_TX", schema = "HR")
 public class AccountTransaction implements Serializable {
 
     private static final long serialVersionUID = -1214729332422174861L;

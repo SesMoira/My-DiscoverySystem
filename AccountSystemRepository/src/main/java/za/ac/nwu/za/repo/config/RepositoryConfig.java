@@ -23,11 +23,20 @@ import java.util.Properties;
 @Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories("za.ac.nwu.ac.repo.persistence")
+@EntityScan("za.ac.nwu.ac.domain.persistence")
 @PropertySource(value = "classpath:application-db.properties")
 public class RepositoryConfig {
-    private static final String[] ENTITY_PACKAGE_TO_SCAN = {"za.ac.nwu.ac.repo.persistence"};
+    /*private static final String[] ENTITY_PACKAGE_TO_SCAN = {"za.ac.nwu.ac.repo.persistence"};
     private static final String PERSISTENCE_UNIT_NAME = "account.syatem.persistence";
 
+    @Value("${spring.datasource.url}")
+    private String datasourceUrl;
+
+    @Value("${spring.datasource.username}")
+    private String username;
+
+    @Value("${spring.datasource.password}")
+    private String password;
 
     @Bean
     public DataSource dataSource(){
@@ -76,5 +85,5 @@ public class RepositoryConfig {
         properties.setProperty("hibernate.hibernate.hbm2ddl.auto", "update");
 
         return properties;
-    }
+    }*/
 }
