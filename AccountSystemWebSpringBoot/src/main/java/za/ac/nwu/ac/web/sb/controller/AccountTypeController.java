@@ -19,13 +19,17 @@ import za.ac.nwu.ac.logic.flow.ModifyAccountTypeFlow;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.logging.Logger;
 
 @RestController
 @RequestMapping("account-type")
 public class AccountTypeController {
 
+    @Autowired
     private final FetchAccountTypeFlow fetchAccountTypeFlow;
+    @Autowired
     private final CreateAccountTypeFlow createAccountTypeFlow;
+    @Autowired
     private final ModifyAccountTypeFlow modifyAccountTypeFlow;
 
     @Autowired
@@ -58,10 +62,11 @@ public class AccountTypeController {
             @ApiResponse(code = 500, message = "Internal server error", response = GeneralResponse.class)})
     public ResponseEntity<GeneralResponse<AccountTypeDto>> create(
             @ApiParam(value = "Request Body to create new AccountType",
-            required = true)
+                    required = true)
             @RequestBody AccountTypeDto accountType){
         AccountTypeDto accountTypeResponse = createAccountTypeFlow.create(accountType);
         GeneralResponse<AccountTypeDto> response = new GeneralResponse<>(true, accountTypeResponse);
+
         return new ResponseEntity<>(response, HttpStatus.CREATED);
     }
 
@@ -83,7 +88,7 @@ public class AccountTypeController {
         GeneralResponse<AccountTypeDto> response = new GeneralResponse<>(true, accountType);
 
         return new ResponseEntity<>(response, HttpStatus.OK);
-        }
+    }
 
     @DeleteMapping("{mnemonic}")
     @ApiOperation(value = "Deletes Specified Account Type", notes = "Fetches corresponding accountType to given mnemonic")
@@ -121,12 +126,12 @@ public class AccountTypeController {
             @PathVariable("mnemonic") final String mnemonic,
 
             @ApiParam(value = "Should be updated with",
-                            name = "newAccountTypeName",
-                            required = true)
+                    name = "newAccountTypeName",
+                    required = true)
             @RequestParam(value = "newAccountTypeName", required = false) final String newAccountTypeName,
 
             @ApiParam(value = "Optional new date to update",
-                     name = "newCreationDate")
+                    name = "newCreationDate")
             @RequestParam(value = "newCreationDate", required = false)
             @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
                     LocalDate newCreationDate
