@@ -1,0 +1,11 @@
+za\ac\nwu\domain\dto\AccountTransactionDetailsDto.class
+za\ac\nwu\domain\dto\MilesDto.class
+za\ac\nwu\domain\persistence\AccountTransactionDetails.class
+za\ac\nwu\domain\service\GeneralResponse.class
+za\ac\nwu\domain\persistence\AccountType.class
+za\ac\nwu\domain\persistence\Entity.class
+za\ac\nwu\domain\dto\AccountTransactionDto.class
+za\ac\nwu\domain\persistence\Miles.class
+za\ac\nwu\domain\persistence\AccountTransaction.class
+za\ac\nwu\domain\persistence\Member.class
+za\ac\nwu\domain\dto\AccountTypeDto.class

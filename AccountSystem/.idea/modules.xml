@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/AccountSystem.iml" filepath="$PROJECT_DIR$/AccountSystem.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AccountSystem.Repository/AccountSystem.Repository.iml" filepath="$PROJECT_DIR$/AccountSystem.Repository/AccountSystem.Repository.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AccountSystemDomain/AccountSystemDomain.iml" filepath="$PROJECT_DIR$/AccountSystemDomain/AccountSystemDomain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AccountSystemLogic/AccountSystemLogic.iml" filepath="$PROJECT_DIR$/AccountSystemLogic/AccountSystemLogic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AccountSystemTranslator/AccountSystemTranslator.iml" filepath="$PROJECT_DIR$/AccountSystemTranslator/AccountSystemTranslator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AccountSystemWebSpringBoot/AccountSystemWebSpringBoot.iml" filepath="$PROJECT_DIR$/AccountSystemWebSpringBoot/AccountSystemWebSpringBoot.iml" />
+    </modules>
+  </component>
+</project>
